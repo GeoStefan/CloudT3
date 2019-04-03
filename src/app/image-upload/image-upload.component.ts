@@ -13,6 +13,7 @@ export class ImageUploadComponent implements OnInit {
   message: string;
   image: string;
   loading = false;
+  result: any;
 
   constructor(private imageService: ImageService) { }
 
@@ -48,6 +49,7 @@ export class ImageUploadComponent implements OnInit {
   async upload() {
     this.loading = true;
     const info = await this.imageService.postImage({filename: this.imagePath, file: this.image});
+    this.result = info;
     console.log(info);
   }
 
