@@ -14,6 +14,8 @@ export class ImageUploadComponent implements OnInit {
   image: string;
   loading = false;
   result: any;
+  url = "https://www.google.com/maps/embed/v1/place?key=AIzaSyCBHSVex2v8NPtX0M3_lO_9ciA6f_BuuJc&q=";
+  map = '';
 
   constructor(private imageService: ImageService) { }
 
@@ -49,6 +51,9 @@ export class ImageUploadComponent implements OnInit {
   async upload() {
     this.loading = true;
     this.result = await this.imageService.postImage({filename: this.imagePath, file: this.image});
+    this.result = JSON.parse(this.result);
+    this.map = this.url + <string>this.result.latitude + "," + <string>this.result.longitude;
+    console.log(this.result);
     this.loading = false;
   }
 

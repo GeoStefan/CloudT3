@@ -8,11 +8,14 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ImageUploadComponent } from './image-upload/image-upload.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatCardModule} from '@angular/material/card';
+import { SafePipe } from './safe.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ImageUploadComponent
+    ImageUploadComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
@@ -20,7 +23,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     HttpClientModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
