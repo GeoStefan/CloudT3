@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageService } from '../image.service';
-import { create } from 'domain';
+
 
 @Component({
   selector: 'app-history',
