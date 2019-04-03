@@ -15,10 +15,16 @@ export class ImageService {
 
   constructor(private http: HttpClient) { }
 
-  private imageUpload = 'https://back-end-t3.appspot.com/upload_photo';
+  private imageUploadUrl = 'https://back-end-t3.appspot.com/upload_photo';
+  private historyUrl = 'https://back-end-t3.appspot.com';
 
   public postImage(image) {
     console.log('Uploading...');
-    return this.http.post<any>(this.imageUpload, image, httpOptions).toPromise();
+    return this.http.post<any>(this.imageUploadUrl, image, httpOptions).toPromise();
+  }
+
+  public getHistory() {
+    console.log('Getting history');
+    return this.http.get<any>(this.historyUrl).toPromise();
   }
 }

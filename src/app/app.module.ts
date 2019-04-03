@@ -10,12 +10,14 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatCardModule} from '@angular/material/card';
 import { SafePipe } from './safe.pipe';
+import { HistoryComponent } from './history/history.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ImageUploadComponent,
-    SafePipe
+    SafePipe,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,
