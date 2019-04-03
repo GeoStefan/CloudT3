@@ -39,6 +39,8 @@ export class ImageUploadComponent implements OnInit {
     }
     fileReader.onloadend = () => {
       this.image = <string>fileReader.result;
+      let reg = new RegExp("^data:image\/[a-zA-Z]+;base64,");
+      this.image = this.image.replace(reg,"");
       //console.log(this.image);
     }
   }
