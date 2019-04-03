@@ -13,7 +13,8 @@
     <input #file type="file" accept='image/*' (change)="preview(file)" />
     <button mat-raised-button color="primary" (click)="upload()">Upload</button>
   </div>
-  <div>
+  <div style="margin-top:1rem;">
+      <mat-spinner *ngIf="loading"></mat-spinner>
     {{result}}
   </div>
 </div>

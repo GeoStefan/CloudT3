@@ -48,9 +48,8 @@ export class ImageUploadComponent implements OnInit {
 
   async upload() {
     this.loading = true;
-    const info = await this.imageService.postImage({filename: this.imagePath, file: this.image});
-    this.result = info;
-    console.log(info);
+    this.result = await this.imageService.postImage({filename: this.imagePath, file: this.image});
+    this.loading = false;
   }
 
 }
