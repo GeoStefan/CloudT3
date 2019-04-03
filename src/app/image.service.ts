@@ -15,7 +15,7 @@ export class ImageService {
 
   constructor(private http: HttpClient) { }
 
-  private imageUpload = 'https://back-end-t3.appspot.com/upload_photo';
+  private imageUpload = 'http://127.0.0.1:8080/upload_photo';
 
   public postImage(image) {
     console.log('Uploading...');
